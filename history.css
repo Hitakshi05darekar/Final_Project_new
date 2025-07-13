@@ -1,0 +1,8 @@
+.history-section {
+  background: url('images/matcha-history-bg.jpg') no-repeat center center/cover;
+  color: #fff;
+  padding: 100px 60px;
+  font-family: 'Meqanor', serif;
+  position: relative;
+  z-index: 1;
+}

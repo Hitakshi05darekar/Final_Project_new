@@ -1,0 +1,390 @@
+@font-face {
+  font-family: 'Meqanor';
+  src: url('./fonts/MeqanorRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Reset + Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Meqanor', serif;
+  background-color: #000;
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: transparent;
+}
+
+.logo {
+  font-family: 'Meqanor', serif;
+  font-size: 1.5rem;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.6;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  width: 100%;
+  background: url('./images/tea-landscape.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.midori-title {
+  font-size: 10vw;
+  color: white;
+  z-index: 2;
+  transition: transform 1.2s ease, opacity 1.2s ease;
+  pointer-events: none;
+  text-align: center;
+  letter-spacing: 3px;
+  transform-origin: center center;
+}
+
+/* Product Triangle Section */
+.triangle-section {
+  height: 100vh; /* Fixed height instead of min-height */
+  position: relative;
+  background: #000;
+  padding: 0; /* Remove padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.triangle-wrapper {
+  position: relative;
+  z-index: 2;
+  padding: 60px 20px; /* Add padding here instead */
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 100px 60px;
+}
+
+
+.product-block {
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.product-block img {
+  width: 250px;
+  max-width: 90%;
+  margin-bottom: 20px;
+}
+
+.product-block h2 {
+  font-family: 'Meqanor', serif;
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+}
+
+.product-block p {
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  color: #ccc;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+#product1 {
+  grid-column: 1 / span 2;
+  justify-self: center;
+}
+
+#product2 {
+  grid-column: 1;
+  justify-self: end;
+}
+
+#product3 {
+  grid-column: 2;
+  justify-self: start;
+}
+
+.fade-image.visible {
+  opacity: 1;
+}
+
+/* About Section */
+.about-section {
+  position: relative;
+  height: 200vh;
+  overflow: hidden;
+  background-color: black;
+}
+
+.about-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url('./images/about-matcha.jpg') no-repeat center center/cover;
+  z-index: 0;
+  will-change: transform;
+}
+
+.about-content {
+  position: sticky;
+  top: 20%;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  color: white;
+}
+
+.about-content h2 {
+  font-family: 'Meqanor', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.about-content p {
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #0e0e0e;
+  padding: 100px 60px 40px;
+  color: #ccc;
+  font-family: sans-serif;
+}
+
+.contact-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+}
+
+.contact-section h4 {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  font-weight: normal;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column li {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.column li:hover {
+  opacity: 0.6;
+}
+
+.email-box {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #888;
+  padding-bottom: 6px;
+  margin-top: 10px;
+  max-width: 320px;
+}
+
+.email-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 0.95rem;
+  outline: none;
+  padding-right: 10px;
+}
+
+.email-box button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.contact-line {
+  font-size: 0.85rem;
+  margin-top: 15px;
+  color: #888;
+}
+
+.contact-line a {
+  color: #aaa;
+  text-decoration: underline;
+}
+
+.footer-logo {
+  font-family: 'Meqanor', serif;
+  text-align: center;
+  font-size: 3rem;
+  color: #1a1a1a;
+  letter-spacing: 10px;
+  user-select: none;
+}
+
+.history-section {
+  background: #000;
+  color: #fff;
+  padding: 60px;
+  font-family: 'Meqanor', serif;
+  margin-top: 0;
+}
+
+.history-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.history-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.history-text h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.history-text p {
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.history-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.history-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.history-panel {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-placeholder {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  background: #111;
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: #888;
+  border-radius: 8px;
+}
+
+.history-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
